@@ -14,15 +14,15 @@ function removeHTTPS(req, res, next) {
 
 
 app.get('/', function(req, res) {
-    res.json({'greeting': 'hello'})
-    // request.get('http://aws.random.cat/meow', function (error, resp, body) {
-    //     if (!error) {
-    //         const response = JSON.parse(body).file;
-    //        res.json(response);
-    //     }
-    //     else 
-    //     res.json(error);
-    // })
+    // res.json({'greeting': 'hello'})
+    request.get('http://aws.random.cat/meow', function (error, resp, body) {
+        if (!error) {
+            const response = JSON.parse(body).file;
+           res.json(response);
+        }
+        else 
+        res.json(error);
+    })
 });
 
 var server = app.listen(process.env.PORT || 5001, function(req, res) {
