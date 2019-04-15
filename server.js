@@ -14,7 +14,7 @@ function removeHTTPS(req, res, next) {
 
 
 app.get('/api/cat', function(req, res) {
-    res.send('hello')
+    res.json('hello')
     // request.get('http://aws.random.cat/meow', function (error, resp, body) {
     //     if (!error) {
     //         const response = JSON.parse(body).file;
@@ -25,6 +25,7 @@ app.get('/api/cat', function(req, res) {
     // })
 });
 
-app.listen(5000, function(req, res) {
-    console.log('server is running on port: ', 5000);
+var server = app.listen(5000, function(req, res) {
+    const port = server.address().port;
+    console.log('server is running on port: ', port);
 })
