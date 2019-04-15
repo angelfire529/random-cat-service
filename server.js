@@ -6,6 +6,7 @@ app.enable("trust proxy");
 
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Header', 'X-FORWARDED-PROTO')
     next();
 })
 
