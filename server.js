@@ -10,10 +10,10 @@ function removeHTTPS(req, res, next) {
     }
 }
 
-app.use(removeHTTPS)
+// app.use(removeHTTPS)
 
 
-app.get('*', function(req, res) {
+app.get('/api/cat', function(req, res) {
     // res.send('hello')
     request.get('http://aws.random.cat/meow', function (error, resp, body) {
         if (!error) {
