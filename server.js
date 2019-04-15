@@ -12,9 +12,12 @@ function removeHTTPS(req, res, next) {
 
 // app.use(removeHTTPS)
 
+app.get('/', function (req, res) {
+     res.json({'greeting': 'hello'})
+})
 
-app.get('/', function(req, res) {
-    // res.json({'greeting': 'hello'})
+app.get('/api/cat', function(req, res) {
+   
     request.get('http://aws.random.cat/meow', function (error, resp, body) {
         if (!error) {
             const response = JSON.parse(body).file;
