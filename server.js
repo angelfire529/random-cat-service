@@ -25,7 +25,7 @@ app.get('/', function(req, res) {
     // })
 });
 
-var server = app.listen(5000, function(req, res) {
+var server = app.listen(process.env.PORT || 5001, function(req, res) {
     const port = server.address().port;
     console.log('server is running on port: ', port);
 })
